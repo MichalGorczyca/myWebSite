@@ -1,0 +1,17 @@
+{
+    "name": "michal/cms",
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    },
+    "autoload": {
+        "classmap": [
+            "classes"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Michal Gorczyca",
+            "email": "michgorc@gmail.com"
+        }
+    ]
+}
