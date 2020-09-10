@@ -1,0 +1,92 @@
+
+.content-left {
+
+    display: block;
+    position: relative;
+    left: -75%;
+    width: 70%;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    margin: 50px 0;
+    margin-right: auto;
+
+
+}
+
+.content-left>img {
+
+    position: relative;
+    display: block;
+    height: 100px;
+
+}
+
+.content-left>.text {
+
+    padding: 20px;
+
+}
+
+.content-left>.projectbutton {
+
+    position: relative;
+    width: 100%;
+    background-color: #4169E1;
+    border-bottom-right-radius: 9px;
+    padding: 15px;
+    transition: .2s;
+    text-transform: uppercase;
+
+}
+
+.content-left>.projectbutton:hover {
+
+    background-color: #1E90FF;
+    cursor: pointer;
+
+}
+
+.content-right {
+
+    display: block;
+    position: relative;
+    right: -75%;
+    width: 70%;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    margin: 50px 0;
+    margin-left: auto;
+
+
+}
+
+.content-right>.text {
+
+    padding: 20px;
+
+}
+
+.content-right>.projectbutton {
+
+    position: relative;
+    width: 100%;
+    background-color: #4169E1;
+    border-bottom-left-radius: 9px;
+    padding: 15px;
+    transition: .2s;
+    text-transform: uppercase;
+
+}
+
+.content-right>.projectbutton:hover {
+
+    background-color: #1E90FF;
+    cursor: pointer;
+
+}
+
+h4 {
+
+    margin-bottom: 0;
+
+}
