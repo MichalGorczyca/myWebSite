@@ -1,0 +1,44 @@
+.main {
+
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    width: 100%;
+}
+
+.box {
+
+    width: 100%;
+
+}
+
+    .forums {
+
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+        width: 100%;
+
+    }
+
+    .important {
+
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+        width: 100%;
+
+    }
+
+    .title {
+
+        border-radius: 10px 10px 0 0;
+        background-color: #4169E1;
+        color: #fff;
+        
+    }
+
+.sidebar {
+
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    padding: 0;
+
+}
