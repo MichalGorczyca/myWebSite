@@ -1,13 +1,18 @@
+<?php include "includes/db.php"; ?>
 <?php include "includes/forumHeader.php"; ?>
+    <link rel="stylesheet" href="css/nav.css" type="text/css">
+    <link rel="stylesheet" href="css/forum.css" type="text/css">
+</head>
+<body>
 
     <?php include "includes/forumNav.php"; ?>
 
     <div class="container-fluid">
         <div class="row">
             <div class="main mt-3 mx-5 p-3">
-                <div class="h3 text-left float-left text-uppercase">Welcome on forum</div> 
+                <div class="h3 text-left float-left text-uppercase">Welcome in forum</div> 
                 <div class="py-2 h6 text-right"><span class="px-2">Login</span> <span>Register</span></div>
-                
+                <div class="back"><a class="text-decoration-none text-dark" href="index.php">Home</a></div>
             </div>
             <div class="box container-fluid mt-3 mx-5">
                 <div class="row">
@@ -24,12 +29,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td scope="row">Michał Gorczyca</td>
-                                        <td>Important Topic</td>
-                                        <td>4</td>
-                                        <td>15.09.2020</td>
-                                    </tr>
+                                <?php
+
+                                    $query = "SELECT * FROM important";
+                                    $get_important_topics = mysqli_query($connection, $query);
+                                    if(!$get_important_topics){
+
+                                        die("Query Failed ".mysqli_error($connection));
+
+                                    }
+
+                                    while($row = mysqli_fetch_assoc($get_important_topics)){
+
+                                        $important_topic_author = $row['important_author'];
+                                        $important_topic_title = $row['important_title'];
+                                        $important_topic_views = $row['important_views'];
+                                        $important_topic_date = $row['important_date'];
+
+
+                                        echo "
+                                        
+                                            <tr>
+                                                <td scope='row'>{$important_topic_author}</td>
+                                                <td>{$important_topic_title}</td>
+                                                <td>{$important_topic_views}</td>
+                                                <td>{$important_topic_date}</td>
+                                            </tr>
+
+                                        ";
+                                    }
+
+                                ?>  
                                 </tbody>
                             </table>
                         </div>
@@ -45,30 +75,49 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td scope="row">Michał Gorczyca</td>
-                                        <td>Topic</td>
-                                        <td>4</td>
-                                        <td>15.09.2020</td>
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Michał Gorczyca</td>
-                                        <td>Topic</td>
-                                        <td>4</td>
-                                        <td>15.09.2020</td>
-                                    </tr>
-                                    <tr>
-                                        <td scope="row">Michał Gorczyca</td>
-                                        <td>Topic</td>
-                                        <td>4</td>
-                                        <td>15.09.2020</td>
-                                    </tr>
+
+                                <?php
+
+                                    $query = "SELECT * FROM topics";
+                                    $get_topics = mysqli_query($connection, $query);
+                                    if(!$get_topics){
+
+                                        die("Query Failed ".mysqli_error($connection));
+
+                                    }
+
+                                    while($row = mysqli_fetch_assoc($get_topics)){
+
+                                        $topic_id = $row['topic_id'];
+                                        $topic_author = $row['topic_author'];
+                                        $topic_title = $row['topic_title'];
+                                        $topic_views = $row['topic_views'];
+                                        $topic_date = $row['topic_date'];
+
+
+                                        echo "
+                                        
+                                            <tr>
+                                                <td scope='row'>{$topic_author}</td>
+                                                <td><a class='font-weight-bold text-dark text-decoration-none' href='view_topic.php?id={$topic_id}'>{$topic_title}</a></td>
+                                                <td>{$topic_views}</td>
+                                                <td>{$topic_date}</td>
+                                            </tr>
+            
+                                        ";
+                                    }
+
+                                ?>                                
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="sidebar col-3 ml-auto">
                         <div class="title p-2 container-fluid">Sidebar</div>
+                        <ul class="list-group">
+                            <li class="list-group-item active">Home</li>
+                            <a class="list-group-item list-group-item-action" href="create_topic.php">Create new topic</a>
+                        </ul>
                     </div>
                 </div>
             </div>
