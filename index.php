@@ -31,7 +31,7 @@
         <div class="icons ">
             <a href="#"><i class="fab fa-facebook px-3"></i></a>
             <a href="#"><i class="far fa-envelope px-3"></i></a>
-            <a href="#"><i class="fab fa-github pl-3"></i></a>
+            <a href="https://github.com/MichalGorczyca/myWebSite"><i class="fab fa-github pl-3"></i></a>
         </div>
     </div>
 

@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="hamburger">
             <ul class="navbar-nav">
                 <li class="nav-item active"><a href="/myWebSite/mainContent.php" class="nav-link">Start</a></li>
-                <li class="nav-item"><a href="/myWebSite/forum/index.php" class="nav-link">Forum</a></li>
+                <li class="nav-item"><a href="/myWebSite/forum/login.php" class="nav-link">Forum</a></li>
                 <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button">Portfolio</a>
                 <div class="dropdown-menu">
                     <a href="" class="dropdown-item">Gaming Website</a>

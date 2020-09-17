@@ -1,6 +1,6 @@
 <?php include "includes/forumHeader.php"; ?>
 <?php if(!isset($_SESSION['username'])) header("Location: login.php") ?>
-<?php $current_page = 'create'; ?> 
+<?php $current_page = 'important'; ?> 
     <link rel="stylesheet" href="css/nav.css" type="text/css">
     <link rel="stylesheet" href="css/forum.css" type="text/css">
     <link rel="stylesheet" href="css/createTopic.css" type="text/css">
@@ -13,7 +13,7 @@
 
 <?php include "includes/main.php"; ?>
         <div class="create">
-            <div class="title p-2 container-fluid">Create new topic</div>
+            <div class="title p-2 container-fluid">Create important topic</div>
         <?php 
 
             if(isset($_POST['submit'])){
@@ -32,7 +32,7 @@
                     $content = $_POST['content'];
                     $date = date('Y-m-d');
 
-                    $query = "INSERT INTO topics(topic_author,topic_title,topic_content,topic_date) VALUES('$author', '$title', '$content', '$date')";
+                    $query = "INSERT INTO important(important_author,important_title,important_content,important_date) VALUES('$author', '$title', '$content', '$date')";
 
                     $insert_query = mysqli_query($connection, $query);
                     if(!$insert_query){
@@ -51,7 +51,7 @@
             }
 
         ?>
-            <form class="form-group p-3" action="create_topic.php" method="post">
+            <form class="form-group p-3" action="create_important_topic.php" method="post">
                 <label class="pt-3 font-weight-bold" for="title">Title</label>
                 <input type="text" class="form-control" name="title" placeholder="Enter title">
                 <label class="pt-3 font-weight-bold" for="content">Content</label>
