@@ -47,24 +47,31 @@
             }
 
         ?>
+        <a href="#" class="addComment"><div class="pt-4 text-right text-decoration-none font-weight-bold text-dark">Add Comment</div></a>
+            <form action="view_topic.php?id=<?php echo $topic_id; ?>" method="post" class="commentForm form-group d-none">
+                <textarea name="content" class="col-12 mt-3" rows="2"></textarea>
+                <input type="submit" name="submit" class="btn" style="background-color: #4169E1; color: #fff;" value="Submit">
+            </form>
+        </div>
         <?php
 
         if(isset($_POST['submit'])){
 
+            $comment_topic_id = $topic_id;
             $user_id = $_SESSION['user_id'];
             $content = $_POST['content'];
             $date = date('Y-m-d');
 
-            $query = "INSERT INTO comments(comment_user_id,comment_content,comment_date) VALUES($user_id,'$content','$date')";
+            $query = "INSERT INTO comments(comment_topic_id,comment_user_id,comment_content,comment_date) VALUES($comment_topic_id,$user_id,'$content','$date')";
             $insert_comment = mysqli_query($connection, $query);
             if(!$insert_comment){
 
                 die("Query Failed ".mysqli_error($connection));
 
             }
-
+        }
             
-            $query = "SELECT * FROM comments";
+            $query = "SELECT * FROM comments WHERE comment_topic_id = '$topic_id'";
             $get_comments_query = mysqli_query($connection, $query);
             if(!$get_comments_query){
                 
@@ -88,35 +95,29 @@
 
                 while($row = mysqli_fetch_assoc($get_comment_creator)){
 
+                    $comment_author = $row['username'];
 
+                    echo "
+                    
+                    <div class='comment p-3 my-3'>
+                        <div class='h2 float-left'>Re: {$title}</div>
+                        <div class='text-right pb-4'>Created in: {$comment_date}</div>
+                        <div class='h6 pb-3'>Written by {$comment_author}</div>
+                        <div>{$comment_content}</div>
+                    </div>
+                    
+                    ";
 
                 }
                 
                 
             }
-            
-        }
 
 
 
 
 
         ?>        
-    </div>
-        <div class="comment">
-                <div class='h2 float-left'>{$title}</div>
-                <div class='text-right pb-4'>Created in: {$date}</div>
-                <div class='h6 pb-3'>Written by {$author}</div>
-                <div>{$content}</div>
-            
-        </div>
-        
-        <a href="#" class="addComment"><div class="pt-4 text-right text-decoration-none font-weight-bold text-dark">Add Comment</div></a>
-        <form action="view_topic.php?id=<?php echo $topic_id; ?>" method="post" class="commentForm form-group d-none">
-            <textarea name="content" class="col-12 mt-3" rows="2"></textarea>
-            <input type="submit" name="submit" class="btn" style="background-color: #4169E1; color: #fff;" value="Submit">
-        </form>
-        </div>
     
     <?php include "includes/sidebar.php"; ?>
             
