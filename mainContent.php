@@ -25,7 +25,7 @@
         <div class="content-right">
             <div class="text"> My plan is to gain knowledge by experiance so I created forum. You can find there many topics I am intersted in and give your opinion by getting in comment section. You can also create your own topics so I can know you better ^^. I am looking for interesting conversation. 
             </div>
-            <div class="projectbutton"><h4 class="font-weight-bold text-white text-center "><a href="#" class="text-white text-decoration-none">Go to my forum</a></h4>
+            <div class="projectbutton"><h4 class="font-weight-bold text-white text-center "><a href="forum/index.php" class="text-white text-decoration-none">Go to my forum</a></h4>
             </div>    
         </div>
         <div class="content-left">

@@ -1,7 +1,8 @@
 <?php include "includes/db.php"; ?>
 <?php include "includes/forumHeader.php"; ?>
+<?php $current_page = 'index'; ?> 
     <link rel="stylesheet" href="css/nav.css" type="text/css">
-    <link rel="stylesheet" href="css/forum.css" type="text/css">
+    <link rel="stylesheet" href="css/Forum.css" type="text/css">
 </head>
 <body>
 
@@ -9,11 +10,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="main mt-3 mx-5 p-3">
-                <div class="h3 text-left float-left text-uppercase">Welcome in forum</div> 
-                <div class="py-2 h6 text-right"><span class="px-2">Login</span> <span>Register</span></div>
-                <div class="back"><a class="text-decoration-none text-dark" href="index.php">Home</a></div>
-            </div>
+            <?php include "includes/main.php"; ?>
             <div class="box container-fluid mt-3 mx-5">
                 <div class="row">
                     <div class="content col-8 p-0">
@@ -112,13 +109,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="sidebar col-3 ml-auto">
-                        <div class="title p-2 container-fluid">Sidebar</div>
-                        <ul class="list-group">
-                            <li class="list-group-item active">Home</li>
-                            <a class="list-group-item list-group-item-action" href="create_topic.php">Create new topic</a>
-                        </ul>
-                    </div>
+                    <?php include "includes/sidebar.php"; ?>
                 </div>
             </div>
         </div>
