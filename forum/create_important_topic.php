@@ -20,7 +20,7 @@
 
                 echo "";
 
-                if(!$_POST['author'] || !$_POST['title'] || !$_POST['content']){
+                if(!$_POST['title'] || !$_POST['content']){
 
                     echo "<h5 class='text-danger pl-3 pt-3'>Please fill all gaps before you submit</h5>";
 

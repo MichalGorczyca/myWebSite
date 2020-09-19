@@ -34,6 +34,7 @@
 
                     while($row = mysqli_fetch_assoc($get_important_topics)){
 
+                        $important_topic_id = $row['important_id'];
                         $important_topic_author = $row['important_author'];
                         $important_topic_title = $row['important_title'];
                         $important_topic_views = $row['important_views'];
@@ -44,7 +45,7 @@
                         
                             <tr>
                                 <td scope='row'>{$important_topic_author}</td>
-                                <td>{$important_topic_title}</td>
+                                <td><a class='font-weight-bold text-dark text-decoration-none' href='view_important_topic.php?id={$important_topic_id}'>{$important_topic_title}</a></td>
                                 <td>{$important_topic_views}</td>
                                 <td>{$important_topic_date}</td>
                             </tr>

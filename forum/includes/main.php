@@ -16,7 +16,7 @@
                 }
                 else if(!isset($_SESSION['username'])){
 
-                    echo "<a href='login.php' class='px-5 login text-dark text-decoration-none font-weight-bold'>Login</a> <a href='#'  class='register text-dark text-decoration-none font-weight-bold'>Register</a>";
+                    echo "<a href='login.php' class='px-5 login text-dark text-decoration-none font-weight-bold'>Login</a> <a href='register.php'  class='register text-dark text-decoration-none font-weight-bold'>Register</a>";
 
                 }
             
